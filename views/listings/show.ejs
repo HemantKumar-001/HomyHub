@@ -24,6 +24,11 @@
             <p class="card-text"><%= listing.country %> </p>
             </p>
         </div>
+        <% if(!listing.owner._id.equals(currUser._id)){ %>
+            <form action="/" method="POST" >
+                <button class="btn btn-danger offset-0">Booking</button>
+            </form>
+            <% } %>
     </div>
     <br>
     <% if(currUser && listing.owner._id.equals(currUser._id)){ %>
